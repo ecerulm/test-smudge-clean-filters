@@ -16,4 +16,8 @@ cat pyproject.toml
 rm .git/index # We want to force a checkout of all files to run the smudge / clean filters
 # git checkout HEAD -- "$(git rev-parse --show-toplevel)"
 git checkout HEAD -- .
+
+
+git read-tree --reset -u $(git mktree /dev/null); git read-tree --reset -u HEAD
+
 ```
