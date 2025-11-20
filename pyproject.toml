@@ -1,7 +1,7 @@
 [project]
 name = "git-smudge-clean-filters"
-version = "0.0.1.post1+a2d696e"
-description = "Add your description here"
+version = "$VERSION"
+description = "Add your description here 1"
 readme = "README.md"
 authors = [
     { name = "Rubén Laguna" }
