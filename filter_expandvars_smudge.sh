@@ -1,4 +1,5 @@
 #!/bin/bash
-export VERSION=$(git describe|sed 's/^v//; s/-/\.post/; s/-g/\+/')
+set -euo pipefail
+export VERSION=$(git describe --always |sed 's/^v//; s/-/\.post/; s/-g/\+/')
 envsubst
 

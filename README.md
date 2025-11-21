@@ -9,12 +9,13 @@ git config filter.version.smudge  filter_expandvars_smudge.sh
 git config filter.version.clean  filter_expandvars_clean.sh
 ```
 
-You need to add this to the `$PATH` 
+You need to add this to the `$PATH` . I'll assume that `~/.local/bin` is 
+already in the `PATH`
 
 ```
-path=($PWD $path)
+cp filter_expandvars_smudge.sh ~/.local/bin
+cp filter_expandvars_clean.sh ~/.local/bin
 ```
-
 
 You need to have a `.git/hooks/post-checkout` hook to force the execution 
 of the filter even when the file has not changed. Since the git tag may
@@ -27,7 +28,7 @@ cp post-checkout .git/hook/post-checkout
 # Test
 
 ```
-git checkout v0.0.5; cat pyproject.toml|grep version ; git switch main; cat pyproject.toml|grep version
+git checkout v0.0.1; cat pyproject.toml|grep version ; git switch main; cat pyproject.toml|grep version
 ```
 
 
