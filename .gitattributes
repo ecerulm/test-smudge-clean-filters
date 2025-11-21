@@ -1,1 +1,2 @@
 pyproject.toml filter=version
+README.md filter=version
